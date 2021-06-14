@@ -14,6 +14,10 @@ SET time_zone = "+00:00";
 -- Database: `jsp_eCommerce`
 --
 
+CREATE SCHEMA IF NOT EXISTS `jsp_eCommerce` CHARACTER SET latin1;
+
+use `jsp_eCommerce`;
+
 -- --------------------------------------------------------
 
 --
