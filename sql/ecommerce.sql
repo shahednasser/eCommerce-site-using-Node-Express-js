@@ -11,12 +11,12 @@ SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 --
--- Database: `jsp_eCommerce`
+-- Database: `headless_ecommerce`
 --
 
-CREATE SCHEMA IF NOT EXISTS `jsp_eCommerce` CHARACTER SET latin1;
+CREATE SCHEMA IF NOT EXISTS `headless_ecommerce` CHARACTER SET latin1;
 
-use `jsp_eCommerce`;
+use `headless_ecommerce`;
 
 -- --------------------------------------------------------
 

@@ -5,7 +5,7 @@ var connection = mysql.createConnection({
   user     : 'root',
   password : '',
   //socket   : '/Applications/MAMP/tmp/mysql/mysql.sock',
-  database : 'jsp_eCommerce'
+  database : 'headless_ecommerce'
 });
 
 connection.connect(function(err) {
