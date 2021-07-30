@@ -22,7 +22,8 @@ var reload = require('reload');
 
 var { PipelinesClient, withKeyCredentials, RecordsClient, CollectionsClient } = require('@sajari/sdk-node');
 const { PipelineType } = require('@sajari/sdk-node/build/src/generated/api');
-const db = require('./database/config');
+// const db = require('./database/config');
+const db = require('./database/db');
 /**
  * For set port or default 7000 posr.
  */
@@ -107,7 +108,7 @@ var server = app.listen(app.get('port'), async function() {
   }
   
   //retrieve records to upsert
-  db.query('SELECT * FROM `products`', async function (error, results) {
+  db.all('SELECT * FROM `products`', [], async function (error, results) {
     if (error) {
       console.error(error);
       return;
