@@ -25,11 +25,75 @@
       </li>
     </ul>
 
-    <div class="d-inline ml-auto search-bar-wrapper" tabindex="0">
-      <input class="form-control mr-sm-2 search-bar" type="search" placeholder="Search" aria-label="Search">
-      <div class="loading d-none"></div>
-      <div class="search-results d-none">
-      </div>
+    <div class="d-inline ml-auto" tabindex="0">
+      <a href="#" style="text-decoration: none;">
+        <img src="images/search.svg" class="img-fluid search" />
+      </a>
     </div>
   </div>
 </nav>
+<div data-widget="overlay">
+  <script type="application/json">
+    {
+      "account": "1623775511261869447",
+      "collection": "products",
+      "endpoint": "//jsonapi-us-valkyrie.sajari.net",
+      "pipeline": "app",
+      "preset": "app",
+      "variables": {},
+      "filters": [],
+      "options": {
+        "sorting": {
+          "options": [
+            {
+              "name": "Most relevant",
+              "value": ""
+            },
+            {
+              "name": "Alphabetical: A to Z",
+              "value": "title"
+            },
+            {
+              "name": "Alphabetical: Z to A",
+              "value": "-title"
+            }
+          ]
+        },
+        "results": {
+          "viewType": "list",
+          "imageAspectRatio": {
+            "grid": 0.563,
+            "list": 1
+          },
+          "imageObjectFit": {
+            "grid": "cover",
+            "list": "cover"
+          }
+        },
+        "input": {
+          "hide": false,
+          "position": "top"
+        },
+        "mode": "overlay",
+        "buttonSelector": ".search"
+      },
+      "theme": {
+        "color": {
+          "primary": {
+            "base": "#667eea",
+            "text": "#ffffff",
+            "active": "#5a67d8"
+          }
+        }
+      },
+      "fields": {
+        "title": "title",
+        "subtitle": "details",
+        "image": "picture",
+        "price": "price"
+      }
+    }
+  </script>
+  <noscript>This page requires JavaScript</noscript>
+</div>
+<script async src="https://cdn.sajari.com/embed/1/loader.js"></script>

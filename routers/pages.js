@@ -1,7 +1,7 @@
 let express = require('express');
 let session = require('express-session');
 let route = express.Router();
-let db = require('../database/config');
+let db = require('../database/db');
 
 route.get('/', function(req, res) {
   res.render('home', {title: 'Home'});
@@ -9,7 +9,7 @@ route.get('/', function(req, res) {
 
 route.get('/shop', function(req, res) {
   let products;
-  db.query("SELECT * FROM products left join categories on categories.id=products.category", function (err, result, fields) {
+  db.all("SELECT * FROM products left join categories on categories.id=products.category", [], function (err, result) {
     if (err) {
       throw err;
     } else {
@@ -21,7 +21,7 @@ route.get('/shop', function(req, res) {
 
 route.get('/product/:product', function(req, res) {
   let products;
-  db.query("SELECT * FROM products left join categories on categories.id=products.category where pid='"+req.params.product+"'", function (err, result, fields) {
+  db.all("SELECT * FROM products left join categories on categories.id=products.category where pid='"+req.params.product+"'", [], function (err, result) {
     if (err) {
       throw err;
     } else {
@@ -55,7 +55,7 @@ route.get('/add-to-cart/:product', function(req, res) {
     id: req.params.product,
     qnt: 1
   });*/
-  db.query("SELECT * FROM products left join categories on categories.id=products.category where pid='"+product+"'", function (err, result, fields) {
+  db.all("SELECT * FROM products left join categories on categories.id=products.category where pid='"+product+"'", [], function (err, result, fields) {
     if (err) {
       console.log(err)
       res.render('page', {title: 'About'});

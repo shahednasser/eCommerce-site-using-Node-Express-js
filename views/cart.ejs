@@ -36,7 +36,7 @@
           <tbody>
           <% products.forEach(function(product, index) { %>
             <tr>
-              <td><a class="text-body" href="/product/<%= product.pid %>"><img style="max-width: 100px; max-height: 50px;" src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/<%= product.picture %>" /></a></td>
+              <td><a class="text-body" href="/product/<%= product.pid %>"><img style="max-width: 100px; max-height: 50px;" src="<%= product.picture %>" /></a></td>
               <td><a class="text-body" href="/product/<%= product.pid %>"><%= product.title %></a><br><span class="badge badge-warning"><%= product.name %></span></td>
               <td>₹<%= product.price %></td>
               <td><input type="number" style="width: 70px;" min="1" name="qnt[]" value="<%= product.qnt %>"/></td>
@@ -60,7 +60,6 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
-  <script src="js/main.js"></script>
   <script src="reload/reload.js"></script>
 </body>
 </html>
